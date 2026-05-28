@@ -1,11 +1,11 @@
 :root {
-  --black: #000000;
-  --white: #ffffff;
+  --black: #070707;
+  --white: #fff8fd;
   --pink: #bd0b82;
   --gray: #6b6b6b;
   --border: #d7d7d7;
 
-  --font-display: "Stack Sans Headline", system-ui; 
+  --font-display: "Stack Sans Headline", system-ui;
   --font-body: "Inter", system-ui;
   --font-heading: "Instrument Serif", system-ui;
 }
@@ -23,6 +23,14 @@ body {
   font-family: var(--font-body);
   background: var(--white);
   color: var(--black);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 24px;
 }
 
 .wrap {
@@ -31,11 +39,26 @@ body {
   padding: 0 6vw;
 }
 
+.binding {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  z-index: 60;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--pink) 0 25px,
+    var(--white) 28px 35px
+  );
+}
+
 .site-nav {
   position: sticky;
   top: 0;
   background: var(--white);
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--pink);
 }
 
 .site-nav .wrap {
@@ -50,7 +73,7 @@ body {
 
 .brand {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: var(--black);
   text-decoration: none;
   line-height: 1;
@@ -67,17 +90,55 @@ body {
 
 .nav-link {
   font-family: var(--font-display);
+  position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
   color: var(--gray);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
+.hover-name {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--black);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+  transition-delay: 0.04s;
+}
+
 .nav-link:hover,
 .nav-link:focus-visible {
   color: var(--pink);
+}
+
+.gh-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1.5px solid var(--black);
+  color: var(--black);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.gh-circle:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.gh-circle i {
+  font-size: 0.58em;
+  line-height: 1;
 }
 
 section {

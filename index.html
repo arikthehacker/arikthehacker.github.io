@@ -6,6 +6,12 @@
     <meta name="description" content="Ariella Marchuk CS463 Portfolio" />
     <title>Ariella Marchuk</title>
 
+    <!-- used https://icons.getbootstrap.com/ for icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,12 +20,15 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
+    <div class="binding" aria-hidden="true"></div>
+
     <nav class="site-nav" aria-label="Main navigation">
       <div class="wrap">
-        <a class="brand" href="#about">About Ariella</a>
+        <a class="brand" href="#about">PORTFOLIO</a>
         <ul class="nav-links">
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#experience">Experience</a></li>
@@ -33,28 +42,215 @@
       <section id="about">
         <div class="wrap">
           <h2 class="section-header">ABOUT ME</h2>
-          <p>Coming soon.</p>
+          <h1 class="name-line">
+            <span class="hover-name">Ariella Marchuk</span>
+          </h1>
+          <p class="about-blurb">
+            I am a senior at Portland State University majoring in Computer
+            Science. I previously worked as an IT and Admin Coordinator at a
+            new-construction Home Builders office, where I was responsible for
+            managing the company's IT infrastructure and providing technical
+            support to employees. Alongside this, I have extensive experience in
+            design, having worked as an aspirational freelance artist for a
+            couple of years before beginning my CS degree. I most recently began
+            a new role as a Modeling and Simulation Intern at a local company
+            near Portland, where I will work directly with Customer Experience
+            Engineers to create 3D models and simulations for clients.
+          </p>
         </div>
       </section>
 
       <section id="experience">
         <div class="wrap">
           <h2 class="section-header">EXPERIENCE</h2>
-          <p>Coming soon.</p>
+          <div class="exp-block">
+            <p class="exp-sublabel">Education</p>
+            <ul class="exp-list" style="--co-width: 230px">
+              <li class="exp-item">
+                <span class="exp-co">Portland State University</span>
+                <span class="exp-role">B.S. Computer Science</span>
+                <span class="exp-year">2023&ndash;2026</span>
+              </li>
+              <li class="exp-item">
+                <span class="exp-co">Mt. Hood Community College</span>
+                <span class="exp-role">A.S. General Studies</span>
+                <span class="exp-year">2021&ndash;2023</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="exp-block">
+            <p class="exp-sublabel">Work</p>
+            <ul class="exp-list" style="--co-width: 130px">
+              <li class="exp-item">
+                <span class="exp-co">PLEXSYS</span>
+                <span class="exp-role"
+                  >Modeling &amp; Simulation Eng. Intern</span
+                >
+                <span class="exp-year">2026</span>
+              </li>
+              <li class="exp-item">
+                <span class="exp-co">Virtual Boss</span>
+                <span class="exp-role">Project Lead</span>
+                <span class="exp-year">2025&ndash;2026</span>
+              </li>
+              <li class="exp-item">
+                <span class="exp-co">GLC Homes</span>
+                <span class="exp-role">IT &amp; Admin Coordinator</span>
+                <span class="exp-year">2025&ndash;2026</span>
+              </li>
+              <li class="exp-item">
+                <span class="exp-co">GLC Homes</span>
+                <span class="exp-role">Tech, Design &amp; Admin Assistant</span>
+                <span class="exp-year">2025</span>
+              </li>
+              <li class="exp-item">
+                <span class="exp-co">MHCC</span>
+                <span class="exp-role">Mailroom Worker</span>
+                <span class="exp-year">2021&ndash;2023</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section id="projects">
         <div class="wrap">
           <h2 class="section-header">PROJECTS</h2>
-          <p>Coming soon.</p>
+
+          <article class="project">
+            <h3>
+              <a
+                class="project-name"
+                href="https://github.com/bsu-tool/bsu-tool"
+                target="_blank"
+                rel="noopener"
+                >bsu-tool</a
+              >
+              <a
+                class="gh-circle"
+                href="https://github.com/bsu-tool/bsu-tool"
+                target="_blank"
+                rel="noopener"
+                aria-label="bsu-tool on GitHub (opens in new tab)"
+                ><i class="bi bi-github" aria-hidden="true"></i
+              ></a>
+            </h3>
+            <p class="desc" data-repo="bsu-tool/bsu-tool">
+              AI-assisted USB protocol analysis tool and MCP server for PSU CS
+              Capstone SS26
+            </p>
+            <div class="project-media">
+              <img
+                src="images/bsu-tool-Architecture.png"
+                alt="Diagram explaining bsu-tool"
+              />
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>
+              <a
+                class="project-name"
+                href="https://github.com/arikthehacker/metro-metrics"
+                target="_blank"
+                rel="noopener"
+                >metro-metrics</a
+              >
+              <a
+                class="gh-circle"
+                href="https://github.com/arikthehacker/metro-metrics"
+                target="_blank"
+                rel="noopener"
+                aria-label="metro-metrics on GitHub (opens in new tab)"
+                ><i class="bi bi-github" aria-hidden="true"></i
+              ></a>
+            </h3>
+            <p class="desc" data-repo="arikthehacker/metro-metrics">
+              Walkability scoring model for urban areas. Built with a 5-person
+              team, presented to stakeholders.
+            </p>
+            <div class="project-media">
+              <img
+                src="images/metro-metrics-Demo.png"
+                alt="Sample Demo screenshot for metro-metrics"
+              />
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>
+              <a
+                class="project-name"
+                href="https://github.com/arikthehacker/fashion-trend-crawler"
+                target="_blank"
+                rel="noopener"
+                >fashion-trend-crawler</a
+              >
+              <a
+                class="gh-circle"
+                href="https://github.com/arikthehacker/fashion-trend-crawler"
+                target="_blank"
+                rel="noopener"
+                aria-label="fashion-trend-crawler on GitHub (opens in new tab)"
+                ><i class="bi bi-github" aria-hidden="true"></i
+              ></a>
+            </h3>
+            <p class="desc" data-repo="arikthehacker/fashion-trend-crawler">
+              AI-powered fashion trend tracker. Crawls Vogue, Who What Wear, and
+              Hypebeast weekly, summarizes trends with Claude.
+            </p>
+            <div class="project-media">
+              <img
+                src="images/fashion-trend-crawler-Architecture.png"
+                alt="Architecture explaining fashion-trend-crawler"
+              />
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="contact">
         <div class="wrap">
           <h2 class="section-header">CONTACT ME</h2>
-          <p>Coming soon.</p>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="send-btn">SEND ME A MESSAGE!</button>
+            <p
+              class="form-note"
+              id="form-note"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
         </div>
       </section>
     </main>
