@@ -1,5 +1,5 @@
 # Ariella Marchuk: Final Project Portfolio
-# CS 463 Intro to Web Development at Portland State University
+## CS 463 Intro to Web Development at Portland State University
 
 ## Running locally
 

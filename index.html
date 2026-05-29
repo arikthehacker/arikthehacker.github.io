@@ -12,6 +12,13 @@
       rel="stylesheet"
     />
 
+    <!-- used bootstrap 5.3 for toast and scrollspy -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- used https://fonts.googleapis.com/ for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,16 +27,17 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
   </head>
 
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#nav-menu">
     <div class="binding" aria-hidden="true"></div>
 
     <nav class="site-nav" aria-label="Main navigation">
       <div class="wrap">
         <a class="brand" href="#about">PORTFOLIO</a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="#nav-menu">
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#experience">Experience</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
@@ -50,12 +58,15 @@
             Science. I previously worked as an IT and Admin Coordinator at a
             new-construction Home Builders office, where I was responsible for
             managing the company's IT infrastructure and providing technical
-            support to employees. Alongside this, I have extensive experience in
-            design, having worked as an aspirational freelance artist for a
-            couple of years before beginning my CS degree. I most recently began
-            a new role as a Modeling and Simulation Intern at a local company
-            near Portland, where I will work directly with Customer Experience
-            Engineers to create 3D models and simulations for clients.
+            support to employees.
+          </p>
+          <p class="about-blurb">
+            Alongside this, I have extensive experience in design, having worked
+            as an aspirational freelance artist for a couple of years before
+            beginning my CS degree. I most recently began a new role as a
+            Modeling and Simulation Intern at a local company near Portland,
+            where I will work directly with Customer Experience Engineers to
+            create 3D models and simulations for clients.
           </p>
         </div>
       </section>
@@ -69,12 +80,12 @@
               <li class="exp-item">
                 <span class="exp-co">Portland State University</span>
                 <span class="exp-role">B.S. Computer Science</span>
-                <span class="exp-year">2023&ndash;2026</span>
+                <span class="exp-year">2023 &ndash; 2026</span>
               </li>
               <li class="exp-item">
                 <span class="exp-co">Mt. Hood Community College</span>
                 <span class="exp-role">A.S. General Studies</span>
-                <span class="exp-year">2021&ndash;2023</span>
+                <span class="exp-year">2021 &ndash; 2023</span>
               </li>
             </ul>
           </div>
@@ -90,14 +101,14 @@
                 <span class="exp-year">2026</span>
               </li>
               <li class="exp-item">
-                <span class="exp-co">Virtual Boss</span>
+                <span class="exp-co">VirtualBoss</span>
                 <span class="exp-role">Project Lead</span>
-                <span class="exp-year">2025&ndash;2026</span>
+                <span class="exp-year">2025 &ndash; 2026</span>
               </li>
               <li class="exp-item">
                 <span class="exp-co">GLC Homes</span>
                 <span class="exp-role">IT &amp; Admin Coordinator</span>
-                <span class="exp-year">2025&ndash;2026</span>
+                <span class="exp-year">2025 &ndash; 2026</span>
               </li>
               <li class="exp-item">
                 <span class="exp-co">GLC Homes</span>
@@ -106,8 +117,8 @@
               </li>
               <li class="exp-item">
                 <span class="exp-co">MHCC</span>
-                <span class="exp-role">Mailroom Worker</span>
-                <span class="exp-year">2021&ndash;2023</span>
+                <span class="exp-role">Student Mailroom Worker</span>
+                <span class="exp-year">2021 &ndash; 2023</span>
               </li>
             </ul>
           </div>
@@ -118,95 +129,179 @@
         <div class="wrap">
           <h2 class="section-header">PROJECTS</h2>
 
-          <article class="project">
-            <h3>
-              <a
-                class="project-name"
-                href="https://github.com/bsu-tool/bsu-tool"
-                target="_blank"
-                rel="noopener"
-                >bsu-tool</a
-              >
-              <a
-                class="gh-circle"
-                href="https://github.com/bsu-tool/bsu-tool"
-                target="_blank"
-                rel="noopener"
-                aria-label="bsu-tool on GitHub (opens in new tab)"
-                ><i class="bi bi-github" aria-hidden="true"></i
-              ></a>
-            </h3>
-            <p class="desc" data-repo="bsu-tool/bsu-tool">
-              AI-assisted USB protocol analysis tool and MCP server for PSU CS
-              Capstone SS26
-            </p>
-            <div class="project-media">
-              <img
-                src="images/bsu-tool-Architecture.png"
-                alt="Diagram explaining bsu-tool"
-              />
-            </div>
-          </article>
+          <div class="accordion" id="projectsAccordion">
+            
+            <div class="accordion-item project">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#project1"
+                  aria-expanded="false"
+                  aria-controls="project1"
+                >
+                  bsu-tool
+                </button>
+              </h2>
 
-          <article class="project">
-            <h3>
-              <a
-                class="project-name"
-                href="https://github.com/arikthehacker/metro-metrics"
-                target="_blank"
-                rel="noopener"
-                >metro-metrics</a
+              <div
+                id="project1"
+                class="accordion-collapse collapse"
+                data-bs-parent="#projectsAccordion"
               >
-              <a
-                class="gh-circle"
-                href="https://github.com/arikthehacker/metro-metrics"
-                target="_blank"
-                rel="noopener"
-                aria-label="metro-metrics on GitHub (opens in new tab)"
-                ><i class="bi bi-github" aria-hidden="true"></i
-              ></a>
-            </h3>
-            <p class="desc" data-repo="arikthehacker/metro-metrics">
-              Walkability scoring model for urban areas. Built with a 5-person
-              team, presented to stakeholders.
-            </p>
-            <div class="project-media">
-              <img
-                src="images/metro-metrics-Demo.png"
-                alt="Sample Demo screenshot for metro-metrics"
-              />
-            </div>
-          </article>
+                <div class="accordion-body">
+                  <div class="project-links">
+                    <a
+                      class="project-name"
+                      href="https://github.com/bsu-tool/bsu-tool"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      GitHub Repo
+                    </a>
 
-          <article class="project">
-            <h3>
-              <a
-                class="project-name"
-                href="https://github.com/arikthehacker/fashion-trend-crawler"
-                target="_blank"
-                rel="noopener"
-                >fashion-trend-crawler</a
-              >
-              <a
-                class="gh-circle"
-                href="https://github.com/arikthehacker/fashion-trend-crawler"
-                target="_blank"
-                rel="noopener"
-                aria-label="fashion-trend-crawler on GitHub (opens in new tab)"
-                ><i class="bi bi-github" aria-hidden="true"></i
-              ></a>
-            </h3>
-            <p class="desc" data-repo="arikthehacker/fashion-trend-crawler">
-              AI-powered fashion trend tracker. Crawls Vogue, Who What Wear, and
-              Hypebeast weekly, summarizes trends with Claude.
-            </p>
-            <div class="project-media">
-              <img
-                src="images/fashion-trend-crawler-Architecture.png"
-                alt="Architecture explaining fashion-trend-crawler"
-              />
+                    <a
+                      class="gh-circle"
+                      href="https://github.com/bsu-tool/bsu-tool"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="bsu-tool on GitHub (opens in new tab)"
+                    >
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                    </a>
+                  </div>
+
+                  <p class="desc" data-repo="bsu-tool/bsu-tool">
+                    AI-assisted USB protocol analysis tool and MCP server for
+                    PSU CS Capstone SS26
+                  </p>
+
+                  <div class="project-media">
+                    <img
+                      src="images/bsu-tool-Architecture.png"
+                      alt="Diagram explaining bsu-tool"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </article>
+
+            <div class="accordion-item project">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#project2"
+                  aria-expanded="false"
+                  aria-controls="project2"
+                >
+                  metro-metrics
+                </button>
+              </h2>
+
+              <div
+                id="project2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#projectsAccordion"
+              >
+                <div class="accordion-body">
+                  <div class="project-links">
+                    <a
+                      class="project-name"
+                      href="https://github.com/arikthehacker/metro-metrics"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      GitHub Repo
+                    </a>
+
+                    <a
+                      class="gh-circle"
+                      href="https://github.com/arikthehacker/metro-metrics"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="metro-metrics on GitHub (opens in new tab)"
+                    >
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                    </a>
+                  </div>
+
+                  <p class="desc" data-repo="arikthehacker/metro-metrics">
+                    Walkability scoring model for urban areas. Built with a
+                    5-person team, presented to stakeholders.
+                  </p>
+
+                  <div class="project-media">
+                    <img
+                      src="images/metro-metrics-Demo.png"
+                      alt="Sample Demo screenshot for metro-metrics"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item project">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#project3"
+                  aria-expanded="false"
+                  aria-controls="project3"
+                >
+                  fashion-trend-crawler
+                </button>
+              </h2>
+
+              <div
+                id="project3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#projectsAccordion"
+              >
+                <div class="accordion-body">
+                  <div class="project-links">
+                    <a
+                      class="project-name"
+                      href="https://github.com/arikthehacker/fashion-trend-crawler"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      GitHub Repo
+                    </a>
+
+                    <a
+                      class="gh-circle"
+                      href="https://github.com/arikthehacker/fashion-trend-crawler"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="fashion-trend-crawler on GitHub (opens in new tab)"
+                    >
+                      <i class="bi bi-github" aria-hidden="true"></i>
+                    </a>
+                  </div>
+
+                  <p
+                    class="desc"
+                    data-repo="arikthehacker/fashion-trend-crawler"
+                  >
+                    AI-powered fashion trend tracker. Crawls Vogue, Who What
+                    Wear, and Hypebeast weekly, summarizes trends with Claude.
+                  </p>
+
+                  <div class="project-media">
+                    <img
+                      src="images/fashion-trend-crawler-Architecture.png"
+                      alt="Architecture explaining fashion-trend-crawler"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -254,5 +349,19 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="wrap">
+        <a
+          href="https://github.com/arikthehacker"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub profile (opens in new tab)"
+        >
+          <i class="bi bi-github" aria-hidden="true"></i>
+        </a>
+        <p>ARIELLA MARCHUK</p>
+        <p class="copyright">&copy; 2026</p>
+      </div>
+    </footer>
   </body>
 </html>

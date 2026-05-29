@@ -8,13 +8,16 @@ nameElla.textContent = "";
 
 letters.forEach((char) => {
   const span = document.createElement("span");
-  span.textContent = char;
+  span.textContent = char === " " ? "\u00A0" : char; 
+  
   if (char.trim() !== "") {
     span.addEventListener("mouseover", () => {
+      span.style.transform = "translateY(-15px)";
       const color = palette[Math.floor(Math.random() * palette.length)];
       span.style.color = color;
       setTimeout(() => {
         span.style.color = "";
+        span.style.transform = "";
       }, 550);
     });
   }
