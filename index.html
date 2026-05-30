@@ -31,13 +31,17 @@
     <script src="script.js" defer></script>
   </head>
 
-  <body data-bs-spy="scroll" data-bs-target="#nav-menu">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#nav-menu"
+    data-bs-smooth-scroll="true"
+  >
     <div class="binding" aria-hidden="true"></div>
 
     <nav class="site-nav" aria-label="Main navigation">
       <div class="wrap">
         <a class="brand" href="#about">PORTFOLIO</a>
-        <ul class="nav-links" id="#nav-menu">
+        <ul class="nav-links" id="nav-menu">
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#experience">Experience</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
@@ -125,12 +129,12 @@
         </div>
       </section>
 
+      <!-- bootstrap accordion help using https://getbootstrap.com/docs/5.3/components/accordion/ -->
       <section id="projects">
         <div class="wrap">
           <h2 class="section-header">PROJECTS</h2>
 
           <div class="accordion" id="projectsAccordion">
-            
             <div class="accordion-item project">
               <h2 class="accordion-header">
                 <button
@@ -349,6 +353,7 @@
         </div>
       </section>
     </main>
+
     <footer>
       <div class="wrap">
         <a
@@ -363,5 +368,29 @@
         <p class="copyright">&copy; 2026</p>
       </div>
     </footer>
+
+    <!-- bootstrap toast & shorthand help from: https://getbootstrap.com/docs/5.3/utilities/spacing/ -->
+    <div class="toast-container position-fixed top-0 end-0 p-3 mt-5">
+      <div
+        id="submit-toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle me-2" aria-hidden="true"></i>
+            Message received!
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

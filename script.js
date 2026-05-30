@@ -43,3 +43,48 @@ const loadProjectDescriptions = async () => {
   });
 };
 loadProjectDescriptions();
+
+/*
+    scroll reveal using intersection observer api at https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API 
+                                                   & https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
+*/
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+
+document.querySelectorAll('main section:not(:first-of-type)').forEach((sec) => {
+    sec.classList.add('reveal');
+    revealObserver.observe(sec);
+});
+
+/*
+    contact form validation using inline note and bootstrap toast at https://getbootstrap.com/docs/5.3/components/toasts/
+*/
+const form = document.querySelector('#contact-form');
+const note = document.querySelector('#form-note');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  const firstName = form.name.value.trim().split(' ')[0] || 'friend';
+  note.textContent = `Thanks, ${firstName}. I'll be in touch!`;
+
+  const toast = new bootstrap.Toast(document.querySelector('#submit-toast'), {
+    delay: 4000,
+  });
+  toast.show();
+
+  form.reset();
+});
